@@ -23,7 +23,10 @@ sap.ui.define([
                 }
                 while (i < 7);
 
-            },                        
+            },
+
+            onNavToLeads : function () {
+            },
 
             onFilterChange: function(oEvent) {
                 let i           = 0,
@@ -71,7 +74,24 @@ sap.ui.define([
                 while (i < 7);
 
             },
-            
+ 
+            resetFilters: function (bSegmentedButton) {
+                let oModelView = this.getOwnerComponent().getModel("mainView");
+
+                //  Date
+                oModelView.setProperty("/date", "");
+
+                //  ComboBox Filters
+                oModelView.setProperty("/selectedBrand", "");
+                oModelView.setProperty("/PeriodType", "");
+
+            },
+
+            onFilterReset: function (oEvent) {
+                this.resetFilters();
+                this.onFilterChange();
+            },
+
             renderComplete: function(oEvent) {
                 oEvent.getSource().setBusy(false);
             }

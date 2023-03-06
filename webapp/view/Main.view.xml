@@ -12,6 +12,7 @@
                 justifyContent="SpaceBetween"
                 alignItems="Center"
                 class="sapUiSmallMargin">
+                <!-- <Button text="{i18n>NavigateToList}" press=".onNavToLeads" class="sapUiTinyMarginEnd"/> -->
                 <Text 
                     text="{i18n>FILTER_BY}"
                     class="textBold"/>
@@ -23,6 +24,8 @@
                         selectionChange="onFilterChange" >
                         <core:Item key="{mainView>key}" text="{mainView>text}" />
                     </ComboBox> -->
+                    <Button icon="sap-icon://reset" press="onFilterReset"  class="sapUiSmallMarginEnd"/>
+
                     <ComboBox 
                         placeholder="{i18n>BRAND}"
                         selectedKey="{mainView>/selectedBrand}"
@@ -177,7 +180,7 @@
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZHOT_TRANSFFERED_LEADSSet}">
+                            <viz.data:FlattenedDataset data="{/ZLEADS_TRANSFERRED_SALESPERSONSet}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="OrgUnitDesc"
                                         value="{OrgUnitDesc}" />
@@ -211,7 +214,7 @@
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZLEADS_TRANSFERRED_SALESPERSONSet}">
+                            <viz.data:FlattenedDataset data="{/ZHOT_TRANSFFERED_LEADSSet}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="OrgUnitDesc"
                                         value="{OrgUnitDesc}" />
@@ -275,7 +278,7 @@
                     <viz:VizFrame 
                         id="idChar07" 
                         busy="{mainView>/busyChar07}" 
-                        width="35rem"
+                        width="33rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart07}"

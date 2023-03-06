@@ -34,7 +34,7 @@ sap.ui.define([
                             busyChar05: true, 
                             busyChar06: true, 
                             busyChar07: true, 
-                            date:   new Date(),
+                            date:   null,
                             selectedBrand: "",
                             selectedTeam: "1",
                             comboBoxTeam: [ { key: "1", text: "Display as me"},
@@ -126,22 +126,56 @@ sap.ui.define([
                                     text: this.getText("SLA_EXCEPTIONS")
                                 },
                                 dataLabel:{
-                                    visible:    true,
-                                    showTotal:  true}, 
-                                categoryAxis:{
-                                    title: {visible: false}
-                                }//,
-                                // plotArea: { 
-                                //     colorPalette: ['green', 'red', '#711e82', '#40c7a1', '#969696'] 
-                                // }
+                                    line:{
+                                        visible: false
+                                    },
+                                    positionPreference : true,
+                                    automaticInOutside : false,
+                                    outsideVisible : true,
+                                    position : 'inside',
+                                    visible : true,
+                                    type : 'value',
+                                    linesOfWrap: 2,
+                                    hideWhenOverlap: false
+                                },
+                                legend: {
+                                    isScrollable: true,
+                                    showFullLabel: true
+                                },
+                                legendGroup:{
+                                    layout:{
+                                        maxWidth: 0.35,
+                                        position: "right"
+                                        }
+                                }
                             },
                             chart03: {
                                 title:{ 
                                     text:       this.getText("NEW_LEADS_BRAND_LEVEL")
                                 },
+
                                 dataLabel:{
-                                    visible:    true,
-                                    showTotal:  false
+                                    line:{
+                                        visible: false
+                                    },
+                                    positionPreference : true,
+                                    automaticInOutside : false,
+                                    outsideVisible : true,
+                                    position : 'inside',
+                                    visible : true,
+                                    type : 'value',
+                                    linesOfWrap: 2,
+                                    hideWhenOverlap: false
+                                },
+                                legend: {
+                                    isScrollable: true,
+                                    showFullLabel: true
+                                },
+                                legendGroup:{
+                                    layout:{
+                                        maxWidth: 0.35,
+                                        position: "right"
+                                        }
                                 }
                             },
                             chart04: {
