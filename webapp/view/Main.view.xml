@@ -101,7 +101,9 @@
                         vizType='column'>
                         <viz:dataset>
                             
-                            <viz.data:FlattenedDataset data="{/ZCOORDINATION_AMOUNTSSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZCOORDINATION_AMOUNTSSet', events: {
+                            dataReceived: '.onChart1DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="UserstatusDesc"
                                         value="{UserstatusDesc}" />
@@ -141,7 +143,9 @@
                         renderComplete="renderComplete"
                         vizType='donut'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZLEADS_IN_CB_EXCPT_COUNTSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZLEADS_IN_CB_EXCPT_COUNTSet', events: {
+                            dataReceived: '.onChart2DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="PartnerName"
                                         value="{PartnerName}" />
@@ -181,7 +185,9 @@
                         renderComplete="renderComplete"
                         vizType='donut'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZNEW_LEADS_BRANDS_LVLSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZNEW_LEADS_BRANDS_LVLSet', events: {
+                            dataReceived: '.onChart3DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="BrandDesc"
                                         value="{BrandDesc}" />
@@ -221,7 +227,9 @@
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZLEADS_TRANSFERRED_SALESPERSONSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZLEADS_TRANSFERRED_SALESPERSONSet', events: {
+                            dataReceived: '.onChart4DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="OrgUnitDesc"
                                         value="{OrgUnitDesc}" />
@@ -261,7 +269,9 @@
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZHOT_TRANSFFERED_LEADSSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZHOT_TRANSFFERED_LEADSSet', events: {
+                            dataReceived: '.onChart5DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="OrgUnitDesc"
                                         value="{OrgUnitDesc}" />
@@ -301,7 +311,9 @@
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZLEAD_MAINT_BY_SALESPERSONSSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZLEAD_MAINT_BY_SALESPERSONSSet', events: {
+                            dataReceived: '.onChart6DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="OrgUnitDesc"
                                         value="{OrgUnitDesc}" />
@@ -344,7 +356,9 @@
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
-                            <viz.data:FlattenedDataset data="{/ZSTATUS_LEADSSet}">
+                            <viz.data:FlattenedDataset data="{path:'/ZSTATUS_LEADSSet', events: {
+                            dataReceived: '.onChart7DataRecieved'
+                        }}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="Description"
                                         value="{Description}" />
