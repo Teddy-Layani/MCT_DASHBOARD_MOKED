@@ -48,7 +48,24 @@
                         class="selectRadius sapUiSmallMarginEnd">
                         <core:Item key="{PeriodType}" text="{Description}"/>
                     </ComboBox>
-                    <DatePicker 
+                      <DateRangeSelection
+                        class="sapUiSmallMarginEnd"
+                        change="onFilterChange"
+                        value="{
+                            'type': 'sap.ui.model.type.DateInterval',
+                            'parts': [
+                                {
+                                    'type': 'sap.ui.model.type.Date',
+                                    'path': 'mainView>/beginDate'
+                                },
+                                {
+                                    'type': 'sap.ui.model.type.Date',
+                                    'path': 'mainView>/endDate'
+                                }
+                                ]
+                            }"
+                    />
+                    <!-- <DatePicker 
                         value="{
                             path:'mainView>/date',
                             type:'sap.ui.model.type.Date',
@@ -58,26 +75,32 @@
                             }
                         }"
                         change="onFilterChange"
-                        class="sapUiSmallMarginEnd"/>
+                        class="sapUiSmallMarginEnd"/> -->
                 </HBox>
             </HBox>
             <l:Grid
                 containerQuery="true"
                 vSpacing="0"
                 defaultSpan="L4 M12 S12">
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                 <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar01}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>COORDINATION}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar01}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar01"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar01" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar01}" 
-                        width="35rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart01}"
                         renderComplete="renderComplete"
                         vizType='column'>
                         <viz:dataset>
+                            
                             <viz.data:FlattenedDataset data="{/ZCOORDINATION_AMOUNTSSet}">
                                 <viz.data:dimensions>
                                     <viz.data:DimensionDefinition name="UserstatusDesc"
@@ -97,15 +120,21 @@
                                 values="UserstatusDesc" />
                         </viz:feeds>
                     </viz:VizFrame>
-                </HBox>
+                 </VBox>
+               </HBox> 
 
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar02}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>SLA_EXCEPTIONS}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar02}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar02"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar02" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar02}" 
-                        width="35rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart02}"
@@ -131,15 +160,21 @@
                                 values="PartnerName" />
                         </viz:feeds>
                     </viz:VizFrame>
-                </HBox>
+                </VBox>
+               </HBox> 
 
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                 <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar03}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>NEW_LEADS_BRAND_LEVEL}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar03}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar03"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar03" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar03}" 
-                        width="35rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart03}"
@@ -165,15 +200,21 @@
                                 values="BrandDesc" />
                         </viz:feeds>
                     </viz:VizFrame>
-                </HBox>
+                </VBox>
+               </HBox> 
 
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                 <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar04}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>TRANSFER_SALESMAN}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar04}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar04"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar04" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar04}" 
-                        width="35rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart04}"
@@ -199,15 +240,21 @@
                                 values="OrgUnitDesc" />
                         </viz:feeds>
                     </viz:VizFrame>
-                </HBox>
+                  </VBox>
+               </HBox> 
 
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar05}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>HOT_TRANSFER}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar05}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar05"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar05" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar05}" 
-                        width="35rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart05}"
@@ -233,15 +280,21 @@
                                 values="OrgUnitDesc" />
                         </viz:feeds>
                     </viz:VizFrame>
-                </HBox>
+                </VBox>
+               </HBox> 
 
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar06}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>PROCESS_SALESMAN}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar06}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar06"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar06" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar06}" 
-                        width="35rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart06}"
@@ -267,18 +320,24 @@
                                 values="OrgUnitDesc" />
                         </viz:feeds>
                     </viz:VizFrame>
-                </HBox>
+                </VBox>
+               </HBox>
 
                 <HBox
                     class="sapUiSmallMarginTop"/>
 
-                <HBox
-                    class="HBoxShadow sapUiSmallMarginTop">
+                <HBox  height="25rem" class="HBoxShadow sapUiSmallMarginTop"  direction="Column" busy="{mainView>/busyChar07}">
+                    <FlexBox  justifyContent="SpaceBetween" alignItems="Start">
+                        <Title text="{i18n>STATUS_LEADS}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold "/>
+                        <Title text="{i18n>total} {mainView>/sumChar07}" class="sapUiSmallMarginTop sapUiSmallMarginBottom sapUiTinyMarginBeginEnd textBold"/>
+                    </FlexBox>
+                  <VBox alignItems="Center">
                     <viz:Popover id="idPopOverChar07"></viz:Popover>
                     <viz:VizFrame 
                         id="idChar07" 
+                        selectData="onSelectedData"
                         busy="{mainView>/busyChar07}" 
-                        width="33rem"
+                        width="25rem"
                         height="20rem"
                         uiConfig="{applicationSet:'fiori'}"
                         vizProperties="{mainView>/chart07}"
@@ -304,7 +363,8 @@
                                 values="Description" />
                         </viz:feeds>
                     </viz:VizFrame>
-
+</VBox>
+               </HBox>
                     <!-- <viz:VizFrame 
                         id="idChar07" 
                         width="35rem"
@@ -332,7 +392,7 @@
                                 values="Description" />
                         </viz:feeds>
                     </viz:VizFrame> -->
-                </HBox>
+                
 
                 <HBox
                     class="sapUiSmallMarginTop">

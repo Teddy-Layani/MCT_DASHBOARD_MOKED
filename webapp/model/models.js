@@ -27,6 +27,13 @@ sap.ui.define([
                     case "main":
                         oDefault    = {
                             busy: true,
+                            sumChar01:0,
+                            sumChar02:0,
+                            sumChar03:0,
+                            sumChar04:0,
+                            sumChar05:0,
+                            sumChar06:0,
+                            sumChar07:0,
                             busyChar01: true, 
                             busyChar02: true, 
                             busyChar03: true, 
@@ -42,7 +49,7 @@ sap.ui.define([
                             chart01: {
                                 interaction: {
                                     selectability: {
-                                        mode: "EXCLUSIVE"
+                                        mode: "SINGLE"
                                     }
                                 },
                                 valueAxis: {
@@ -83,7 +90,7 @@ sap.ui.define([
                                 title: {
                                     text:       this.getText("COORDINATION"),
                                     // alignment:  "right",
-                                    visible:    true
+                                    visible:    false
                                 },
                                 legend: {
                                     visible: false
@@ -123,7 +130,8 @@ sap.ui.define([
                             },
                             chart02: {
                                 title:{ 
-                                    text: this.getText("SLA_EXCEPTIONS")
+                                    text: this.getText("SLA_EXCEPTIONS"),
+                                    visible: false
                                 },
                                 dataLabel:{
                                     line:{
@@ -147,11 +155,16 @@ sap.ui.define([
                                         maxWidth: 0.35,
                                         position: "right"
                                         }
-                                }
+                                },interaction: {
+                                    selectability: {
+                                      mode: "SINGLE"        //only one data point can be selected at a time
+                                    }
+                                  }
                             },
                             chart03: {
                                 title:{ 
-                                    text:       this.getText("NEW_LEADS_BRAND_LEVEL")
+                                    text:       this.getText("NEW_LEADS_BRAND_LEVEL"),
+                                    visible: false
                                 },
 
                                 dataLabel:{
@@ -176,14 +189,18 @@ sap.ui.define([
                                         maxWidth: 0.35,
                                         position: "right"
                                         }
-                                }
+                                },interaction: {
+                                    selectability: {
+                                      mode: "SINGLE"        //only one data point can be selected at a time
+                                    }
+                                  }
                             },
                             chart04: {
                                 interaction: {
                                     selectability: {
-                                        mode: "EXCLUSIVE"
+                                      mode: "SINGLE"        //only one data point can be selected at a time
                                     }
-                                },
+                                  },
                                 valueAxis: {
                                     title: {
                                         visible: false
@@ -221,7 +238,7 @@ sap.ui.define([
                                 },
                                 title:{ 
                                     text:       this.getText("TRANSFER_SALESMAN"),
-                                    visible:    true
+                                    visible: false
                                 },
                                 legend: {
                                     visible: false
@@ -283,7 +300,7 @@ sap.ui.define([
                                 },
                                 title:{ 
                                     text:       this.getText("HOT_TRANSFER"),
-                                    visible:    true
+                                    visible: false
                                 },
                                 legend: {
                                     visible: false
@@ -300,12 +317,16 @@ sap.ui.define([
                                         },
                                         hideWhenOverlap: false
                                     }
-                                }
+                                },interaction: {
+                                    selectability: {
+                                      mode: "SINGLE"        //only one data point can be selected at a time
+                                    }
+                                  }
                             },
                             chart06: {
                                 interaction: {
                                     selectability: {
-                                        mode: "EXCLUSIVE"
+                                        mode: "SINGLE"
                                     }
                                 },
                                 valueAxis: {
@@ -345,7 +366,7 @@ sap.ui.define([
                                 },
                                 title:{ 
                                     text:       this.getText("PROCESS_SALESMAN"),
-                                    visible:    true
+                                    visible: false
                                 },
                                 legend: {
                                     visible: false
@@ -362,7 +383,11 @@ sap.ui.define([
                                         },
                                         hideWhenOverlap: false
                                     }
-                                }
+                                },interaction: {
+                                    selectability: {
+                                      mode: "SINGLE"        //only one data point can be selected at a time
+                                    }
+                                  }
 
 
 
@@ -434,7 +459,7 @@ sap.ui.define([
                             chart07: {
                                 interaction: {
                                     selectability: {
-                                        mode: "EXCLUSIVE"
+                                        mode: "SINGLE"
                                     }
                                 },
                                 valueAxis: {
@@ -474,7 +499,7 @@ sap.ui.define([
                                 },
                                 title: {
                                     text:       this.getText("STATUS_LEADS"),
-                                    visible:    true
+                                    visible: false
                                 },
                                 legend: {
                                     visible: false
@@ -540,7 +565,7 @@ sap.ui.define([
                                 },
                                 title: {
                                     text: this.getText("STATUS_LEADS"),
-                                    visible: true
+                                    visible: false
                                 },
                                 legend: {
                                     visible: false
