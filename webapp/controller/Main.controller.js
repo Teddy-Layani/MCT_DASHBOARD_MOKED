@@ -297,7 +297,8 @@ sap.ui.define([
                 let oModelView = this.getOwnerComponent().getModel("mainView");
 
                 //  Date
-                oModelView.setProperty("/date", "");
+                oModelView.setProperty("/beginDate", "");
+                oModelView.setProperty("/endDate", "");
 
                 //  ComboBox Filters
                 oModelView.setProperty("/selectedBrand", "");
